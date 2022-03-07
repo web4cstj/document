@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jbroadway/urlify": "^1.2"
+    }
+}
