@@ -1,4 +1,5 @@
 <?php
+namespace Document;
 class Element extends Node
 {
     public $name;

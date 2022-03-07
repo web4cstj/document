@@ -1,4 +1,5 @@
 <?php
+namespace Document;
 class Attribute {
     public function __construct($nom, $valeur = "")
     {

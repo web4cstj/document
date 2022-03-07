@@ -1,4 +1,5 @@
 <?php
+namespace Document;
 class TextNode extends Node {
     public $value = "";
     public function __construct($value = "") {

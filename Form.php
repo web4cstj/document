@@ -1,4 +1,5 @@
 <?php
+namespace Document;
 class Form extends Element {
     public $action = "";
     public $method = "get";

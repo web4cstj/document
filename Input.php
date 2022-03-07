@@ -1,4 +1,5 @@
 <?php
+namespace Document;
 class Input extends Element {
     public $label = null;
     public function __construct($name, $type="text", $value="")

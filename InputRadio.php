@@ -1,4 +1,5 @@
 <?php
+namespace Document;
 class InputRadio extends Input {
     public function __construct($name, $value)
     {

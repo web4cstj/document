@@ -1,5 +1,12 @@
 {
+    "name": "web4cstj/document",
+    "description": "Reproduction du DOM en PHP",
+    "license": "MIT",
     "require": {
+        "php": ">=7.4",
         "jbroadway/urlify": "^1.2"
-    }
+    },
+	"autoload": {
+		"psr-0": { "URLify": "" }
+	}
 }
