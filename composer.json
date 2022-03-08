@@ -7,6 +7,6 @@
         "jbroadway/urlify": "^1.2"
     },
 	"autoload": {
-		"psr-0": { "URLify": "" }
+		"psr-4": { "Web4cstj\\": "" }
 	}
 }
