@@ -1,5 +1,6 @@
 <?php
-include_once __DIR__."/../vendor/autoload.php";
+namespace Web4cstj\Document;
+
 class Node {
     public $previousSibling = null;
     public $nextSibling = null;
@@ -28,6 +29,6 @@ class Node {
         return $this;
     }
     static public function slug($text) {
-        return URLify::slug($text);
+        return \URLify::slug($text);
     }
 }

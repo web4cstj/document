@@ -1,5 +1,5 @@
 <?php
-namespace Document;
+namespace Web4cstj\Document;
 class Attribute {
     public function __construct($nom, $valeur = "")
     {

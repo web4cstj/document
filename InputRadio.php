@@ -1,5 +1,6 @@
 <?php
-namespace Document;
+namespace Web4cstj\Document;
+
 class InputRadio extends Input {
     public function __construct($name, $value)
     {

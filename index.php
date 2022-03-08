@@ -1,5 +1,7 @@
 <?php
-include_once "autoload.php";
+namespace Web4cstj\Document;
+
+include_once "vendor/autoload.php";
 $form = new Form();
 $div = new Div();
 $form->append($div);

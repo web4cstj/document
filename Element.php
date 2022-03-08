@@ -1,5 +1,6 @@
 <?php
-namespace Document;
+namespace Web4cstj\Document;
+
 class Element extends Node
 {
     public $name;

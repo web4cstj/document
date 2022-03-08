@@ -1,5 +1,6 @@
 <?php
-namespace Document;
+namespace Web4cstj\Document;
+
 class TextNode extends Node {
     public $value = "";
     public function __construct($value = "") {

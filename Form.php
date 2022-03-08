@@ -1,5 +1,6 @@
 <?php
-namespace Document;
+namespace Web4cstj\Document;
+
 class Form extends Element {
     public $action = "";
     public $method = "get";

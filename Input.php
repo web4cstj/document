@@ -1,5 +1,6 @@
 <?php
-namespace Document;
+namespace Web4cstj\Document;
+
 class Input extends Element {
     public $label = null;
     public function __construct($name, $type="text", $value="")
