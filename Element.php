@@ -8,10 +8,11 @@ class Element extends Node
     public $lastChild = null;
     public $attributes;
     public $noContent = false;
-    public function __construct($name = "div")
+    public function __construct($name = "div", $content = [])
     {
         $this->name = $name;
         $this->attributes = [];
+        $this->append($content);
     }
     public function __toString()
     {
@@ -46,6 +47,9 @@ class Element extends Node
         return $this->attributes[$name]->value;
     }
     public function append($element) {
+        if (is_null($element)) {
+            
+        }
         if (is_array($element)) {
             foreach($element as $e) {
                 $this->append($e);
