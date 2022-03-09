@@ -1,17 +1,20 @@
 <?php
 namespace Web4cstj\Document;
 class Attribute {
-    public function __construct($nom, $valeur = "")
+    public function __construct($name, $value = "")
     {
-        $this->nom = $nom;
-        $this->valeur = $valeur;
+        $this->name = $name;
+        $this->value = $value;
     }
     public function __toString()
     {
         $resultat = '';
-        $resultat .= $this->nom;
+        $resultat .= $this->name;
         $resultat .= '=';
-        $resultat .= '"'.$this->valeur.'"';
+        $resultat .= '"'.$this->value.'"';
         return $resultat;
+    }
+    public function clone() {
+        return new self($this->name, $this->value);
     }
 }

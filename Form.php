@@ -2,11 +2,9 @@
 namespace Web4cstj\Document;
 
 class Form extends Element {
-    public $action = "";
-    public $method = "get";
-    public function __construct($action = "", $method = "get")
+    public function __construct($action = "", $method = "get", $content = [])
     {
-        parent::__construct("form");
+        parent::__construct("form", $content);
         $this->setAttribute("action", $action);
         $this->setAttribute("method", $method);
     }

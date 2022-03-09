@@ -27,4 +27,11 @@ class Img extends Element
         }
         return $figure->__toString();
     }
+    public function clone($deep = false)
+    {
+        $clone = parent::clone($deep);
+        $clone->figure = $this->figure;
+        $clone->figcaption = $this->figcaption;
+        return $clone;
+    }
 }

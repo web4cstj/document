@@ -10,4 +10,8 @@ class TextNode extends Node {
     {
         return $this->value;
     }
+    public function clone() {
+        $resultat = new self($this->value);
+        return $resultat;
+    }
 }

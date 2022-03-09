@@ -48,7 +48,7 @@ class Element extends Node
     }
     public function append($element) {
         if (is_null($element)) {
-            
+            return;
         }
         if (is_array($element)) {
             foreach($element as $e) {
@@ -56,26 +56,46 @@ class Element extends Node
             }
             return $element;
         }
-        if (is_string($element)) {
-            return $this->append(new TextNode($element));
-        }
         if ($element instanceof Attribute) {
             $element->ownerElement = $this;
             $this->attributes[$element->name] = $element;
             return $element;    
         }
-        $element->remove();
-        if ($this->lastChild === null) {
-            $this->firstChild = $element;
-        } else {
-            $this->lastChild->nextSibling = $element;
+        if ($element instanceof Node) {
+            $element->remove();
+            if ($this->lastChild === null) {
+                $this->firstChild = $element;
+            } else {
+                $this->lastChild->nextSibling = $element;
+            }
+            $this->lastChild = $element;
+            $element->parentNode = $this;
+            return $element;
         }
-        $this->lastChild = $element;
-        $element->parentNode = $this;
-        return $element;
+        return $this->append(new TextNode("$element"));
     }
     static public function create($name = "div")
     {
         return new self($name);
+    }
+    public function children()
+    {
+        $resultat = [];
+        $child = $this->firstChild;
+        while ($child) {
+            $resultat[] = $child;
+        }
+        return $resultat;
+    }
+    public function clone($deep = true) {
+        $clone = new static($this->name);
+        $clone->append($this->attributes);
+        $clone->noContent = $this->noContent;
+        if ($deep) {
+            foreach($this->children() as $child) {
+                $clone->append($child->clone(true));
+            }
+        }
+        return $clone;
     }
 }
